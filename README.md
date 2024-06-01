@@ -1,1 +1,1 @@
-initial readme for repo
+https://travioligit.github.io/slaps/

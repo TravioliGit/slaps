@@ -8,53 +8,37 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <p class="header-text">slaps demonstration map</p>
     </header>
     
     <main>
-        <section id="home">
-            <h1>Welcome to Your Website</h1>
-            <p>This is a paragraph about your website. You can add more content here.</p>
-        </section>
+        <div>
+            <ul class="icon-list">
+                <li><img src="./assets/maps/activism icon.png" id="icon-activism" class="icon-button"></img></li>
+                <li><img src="./assets/maps/art icon.png" id="icon-art" class="icon-button"></img></li>
+                <li><img src="./assets/maps/hate icon.png" id="icon-hate" class="icon-button"></img></li>
+                <li><img src="./assets/maps/marketing icon.png" id="icon-marketing" class="icon-button"></img></li>
+                <li><img src="./assets/maps/sport icon.png" id="icon-sport" class="icon-button"></img></li>
+                <li><img src="./assets/maps/street art icon.png" id="icon-street" class="icon-button"></img></li>
+            </ul>
+        </div>
         
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Information about your company or website.</p>
-        </section>
-        
-        <section id="services">
-            <h2>Our Services</h2>
-            <p>Details about the services you offer.</p>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form action="submit_form.php" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <br>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <br>
-                <input type="submit" value="Submit">
-            </form>
-        </section>
+        <div class="map-container">
+            <img src="./assets/maps/Portsmouth-map-PLAIN.png" id="map-default"></img>
+            <img src="./assets/maps/Portsmouth-map-ACTIVISM.png" id="map-activism" hidden></img>
+            <img src="./assets/maps/Portsmouth-map-ART.png" id="map-art" hidden></img>
+            <img src="./assets/maps/Portsmouth-map-HATE.png" id="map-hate" hidden></img>
+            <img src="./assets/maps/Portsmouth-map-MARKETING.png" id="map-marketing" hidden></img>
+            <img src="./assets/maps/Portsmouth-map-SPORT.png" id="map-sport" hidden></img>
+            <img src="./assets/maps/Portsmouth-map-STREET-ART.png" id="map-street" hidden></img>
+        </div>
+
+        <div>
+
+        </div>
     </main>
     
-    <footer>
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
-    </footer>
-    
-    <script src="script.js"></script> <!-- Link to your JS file -->
+
+    <script src="script.js"></script> 
 </body>
 </html>
