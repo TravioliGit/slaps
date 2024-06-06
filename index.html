@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SLAPS Sticker Heat Map</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 </head>
+
 <body>
     <header>
-        <p class="header-text">slaps demonstration map</p>
+        <p class="header-text">slaps map</p>
     </header>
-    
+
     <main>
-        <div>
-            <ul class="icon-list">
-                <li><img src="./assets/maps/activism icon.png" id="icon-activism" class="icon-button"></img></li>
-                <li><img src="./assets/maps/art icon.png" id="icon-art" class="icon-button"></img></li>
-                <li><img src="./assets/maps/hate icon.png" id="icon-hate" class="icon-button"></img></li>
-                <li><img src="./assets/maps/marketing icon.png" id="icon-marketing" class="icon-button"></img></li>
-                <li><img src="./assets/maps/sport icon.png" id="icon-sport" class="icon-button"></img></li>
-                <li><img src="./assets/maps/street art icon.png" id="icon-street" class="icon-button"></img></li>
-            </ul>
+        <div id='iconlist'>
+
+            <img src="./assets/maps/activism icon.png" data-mapicon="1" id="icon-activism" class="icon-button"></img>
+            <img src="./assets/maps/art icon.png" data-mapicon="2" id="icon-art" class="icon-button"></img>
+            <img src="./assets/maps/hate icon.png" data-mapicon="3" id="icon-hate" class="icon-button"></img>
+            <img src="./assets/maps/marketing icon.png" data-mapicon="4" id="icon-marketing" class="icon-button"></img>
+            <img src="./assets/maps/sport icon.png" data-mapicon="5" id="icon-sport" class="icon-button"></img>
+            <img src="./assets/maps/street art icon.png" data-mapicon="6" id="icon-street" class="icon-button"></img>
         </div>
-        
+
         <div class="map-container">
-            <img src="./assets/maps/Portsmouth-map-PLAIN.png" class="default-map "id="map-default"></img>
-            <img src="./assets/maps/ACTIVISM-HEAT-PNG.png" class="heat-map" id="map-activism" ></img>
-            <img src="./assets/maps/ART-HEAT-PNG.png" class="heat-map" id="map-art" ></img>
-            <img src="./assets/maps/HATE-HEAT-PNG.png" class="heat-map" id="map-hate" ></img>
-            <img src="./assets/maps/MARKETING-HEAT-PNG.png" class="heat-map" id="map-marketing" ></img>
-            <img src="./assets/maps/SPORT-HEAT-PNG.png" class="heat-map" id="map-sport" ></img>
-            <img src="./assets/maps/STREET-ART-HEAT-PNG.png"class="heat-map" id="map-street" ></img>
+            <img src="./assets/maps/Portsmouth-map-PLAIN.png" class="default-map" id="map-default"></img>
+            <img src="./assets/maps/ACTIVISM-HEAT-PNG.png" class="heat-map" id="map-activism"></img>
+            <img src="./assets/maps/ART-HEAT-PNG.png" class="heat-map" id="map-art"></img>
+            <img src="./assets/maps/HATE-HEAT-PNG.png" class="heat-map" id="map-hate"></img>
+            <img src="./assets/maps/MARKETING-HEAT-PNG.png" class="heat-map" id="map-marketing"></img>
+            <img src="./assets/maps/SPORT-HEAT-PNG.png" class="heat-map" id="map-sport"></img>
+            <img src="./assets/maps/STREET-ART-HEAT-PNG.png" class="heat-map" id="map-street"></img>
         </div>
 
         <div>
 
         </div>
     </main>
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
 </body>
+
 </html>

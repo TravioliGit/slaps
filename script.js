@@ -177,6 +177,21 @@ const streetartHeatPins = []
   5: sport
   6: streetart
 */
+function showOrHideHeatMap(mapId) {
+  const selectedMap = document.getElementById(mapId);
+
+  if (selectedMap) {
+    if (selectedMap.classList.contains('active')) {
+      // if the map is shown, hide it
+      selectedMap.classList.remove('active');
+    } else {
+      // otherwise, show it
+
+      selectedMap.classList.add('active');
+    }
+  }
+}
+
 function showPins(heatmap) {
 
 }
@@ -198,8 +213,42 @@ function setupPins() {
 }
 
 function setupClickEvents() {
-  const heatmapIcons = document.querySelectorAll('.icon-button');
+  const heatmapIcons = document.querySelectorAll('.icon-button')
   const heatmapPins = document.querySelectorAll('.pin')
+
+  heatmapIcons.forEach(icon => {
+    icon.addEventListener('click', () => {
+      const mapIcon = icon.dataset.mapicon;
+      let mapId;
+
+      switch (mapIcon) {
+        case '1':
+          mapId = 'map-activism';
+          break;
+        case '2':
+          mapId = 'map-art';
+          break;
+        case '3':
+          mapId = 'map-hate';
+          break;
+        case '4':
+          mapId = 'map-marketing';
+          break;
+        case '5':
+          mapId = 'map-sport';
+          break;
+        case '6':
+          mapId = 'map-street';
+          break;
+        default:
+          mapId = null;
+      }
+
+      if (mapId) {
+        showOrHideHeatMap(mapId);
+      }
+    });
+  });
 }
 
 // call these functions in order when the site loads
