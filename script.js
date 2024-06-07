@@ -14,9 +14,9 @@ const pinList = {
   13: [404, 511],
   14: [429, 527],
   15: [473, 529],
-  16: [476, 529],
+  
   17: [482, 529],
-  18: [487, 530],
+  
   19: [489, 532],
   20: [501, 532],
   21: [505, 532],
@@ -95,7 +95,7 @@ const pinList = {
   94: [464, 249],
   95: [464, 241],
   96: [469, 202],
-  97: [416, 34],
+  97: [416, 54],
   98: [324, 247],
   99: [312, 261],
   100: [290, 304],
@@ -136,7 +136,7 @@ const pinList = {
   135: [153, 359],
   136: [153, 376],
   137: [135, 396],
-  138: [101, 388],
+  138: [118, 400],
   139: [202, 341],
   140: [199, 320],
   141: [379, 552],
@@ -161,55 +161,38 @@ const pinList = {
   160: [589, 441],
   161: [548, 391],
   162: [542, 380]
-};
-const activismHeatPins = []
-const artHeatPins = []
-const hateHeatPins = []
-const marketingHeatPins = []
-const sportHeatPins = []
-const streetartHeatPins = []
+}
 
-/* number is used to identify which heat map the pins belong to
-  1: activism
-  2: art
-  3: hate
-  4: marketing
-  5: sport
-  6: streetart
-*/
 function showOrHideHeatMap(mapId) {
   const selectedMap = document.getElementById(mapId);
-
   if (selectedMap) {
     if (selectedMap.classList.contains('active')) {
       // if the map is shown, hide it
       selectedMap.classList.remove('active');
     } else {
       // otherwise, show it
-
       selectedMap.classList.add('active');
     }
   }
 }
 
-function showPins(heatmap) {
-
-}
-
-function hidePins(heatmap) {
-
-}
-
 function onPinClick(pinId) {
-
+  console.log(pinId.dataset.pin)
 }
 
 function handleShowImage(imageId) {
 
 }
 
-function setupPins() {
-
+async function setupPins() {
+  for (const pin in pinList) {
+    const pinElement = document.createElement('div');
+    pinElement.classList.add('pin');
+    pinElement.style.left = `${pinList[pin][0]-20}px`;
+    pinElement.style.top = `${pinList[pin][1]-15}px`;
+    pinElement.dataset.pin = pin;
+    document.getElementById('map-container').appendChild(pinElement);
+  }
 }
 
 function setupClickEvents() {
@@ -249,10 +232,17 @@ function setupClickEvents() {
       }
     });
   });
+
+  for (const pin of heatmapPins) {
+    console.log(pin.dataset.pin)
+    pin.addEventListener('click', () => {
+      onPinClick(pin)
+    })
+  }
 }
 
 // call these functions in order when the site loads
-window.addEventListener('load', () => {
-  setupPins()
+window.addEventListener('load', async () => {
+  await setupPins()
   setupClickEvents()
 })

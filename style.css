@@ -34,14 +34,16 @@ body {
 
 .map-container {
     position: relative;
-    width: 100%; 
-    max-width: 1024px; 
+    width: 1024px; 
+    min-width: 1024px; 
+    max-width: 1024px;
+    min-height: 720px;
     margin: 0 auto;
 }
 
 .default-map {
     width: 100%;
-    height: auto;
+    height: 720px;
 }
 
 .heat-map {
@@ -49,7 +51,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 720px;
     opacity: 0; 
     transition: opacity 0.5s ease;
 }
@@ -59,5 +61,42 @@ body {
 }
 
 .pin {
-    
+    position:absolute;
+    width: 12px;
+    height: 12px;
+    background-color: plum; 
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    opacity: 0.6;
+}
+
+.pin::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: gray; 
+    border-radius: 50%;
+    top: 2.75px;
+    left: 2.7px;
+    opacity: 0.6;
+}
+
+.image-container {
+    position: absolute;
+    width: 128px;
+    height: auto;
+    background-color: white;
+    border-radius: 16px;
+    align-items: center;
+    opacity: 0;
+}
+
+.image-container.active {
+    opacity: 1;
+}
+
+#sticker-image {
+    max-width: 100%;
+    max-height: 100%;
 }
