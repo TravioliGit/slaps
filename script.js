@@ -174,10 +174,28 @@ function showOrHideHeatMap(mapId) {
   }
 }
 
-function onPinClick(pinId) {
-  console.log(pinId.dataset.pin)
+function onPinClick(pin) {
+  const id = pin.dataset.pin
+  const image = document.getElementById('sticker-image')
+  const newSrc = `./assets/images/1 (${id}).jpg`
+  // Add fade-out class to start the fade-out transition
+  image.classList.remove('fade-in');
+  image.classList.add('fade-out');
 
+  // Wait for the transition to complete before changing the src
+  image.addEventListener('transitionend', function handler() {
+      // Remove the event listener to prevent multiple triggers
+      image.removeEventListener('transitionend', handler);
+
+      // Change the image source
+      image.src = newSrc;
+
+      // Add fade-in class to start the fade-in transition
+      image.classList.remove('fade-out');
+      image.classList.add('fade-in');
+  }, { once: true });
 }
+
 
 // create the pins and places them on the page
 async function setupPins() {

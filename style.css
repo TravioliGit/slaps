@@ -9,8 +9,15 @@ body {
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.logo img {
+    width: 200px;
+    height: 200px;
 }
 
 #page-body {
@@ -18,7 +25,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    margin: 0 auto;
+    width: 95%;
     padding: 16px;
 }
 
@@ -26,14 +33,12 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 100%;
+    width: 10%;
     background-color: white;
     border-radius: 16px;
     align-items: center;
     justify-content: space-evenly;
-    max-width: 1024px;
     align-self: center;
-    margin: 0 auto;
     padding: 4px;
 }
 
@@ -69,7 +74,6 @@ body {
     min-width: 1024px; 
     max-width: 1024px;
     min-height: 720px;
-    margin: 0 auto;
 }
 
 .default-map {
@@ -128,4 +132,14 @@ body {
 #sticker-image {
     max-width: 100%;
     max-height: 100%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+#sticker-image.fade-out {
+    opacity: 0;
+}
+
+#sticker-image.fade-in {
+    opacity: 1;
 }
