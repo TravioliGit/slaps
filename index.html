@@ -10,31 +10,55 @@
 
 <body>
     <header>
-        <p class="header-text">slaps map</p>
+        <img class="logo" src="./assets/images/Slaps-logo-no-bg.png"></p>
     </header>
 
     <main>
-        <div id='iconlist'>
-            <img src="./assets/maps/activism icon.png" data-mapicon="1" id="icon-activism" class="icon-button"></img>
-            <img src="./assets/maps/art icon.png" data-mapicon="2" id="icon-art" class="icon-button"></img>
-            <img src="./assets/maps/hate icon.png" data-mapicon="3" id="icon-hate" class="icon-button"></img>
-            <img src="./assets/maps/marketing icon.png" data-mapicon="4" id="icon-marketing" class="icon-button"></img>
-            <img src="./assets/maps/sport icon.png" data-mapicon="5" id="icon-sport" class="icon-button"></img>
-            <img src="./assets/maps/street art icon.png" data-mapicon="6" id="icon-street" class="icon-button"></img>
-        </div>
+        <div id="page-body">
+            <div id='iconlist'>
+                <p class="header-text">Click icons to toggle heatmaps</p>
+                <div class="icon-button" data-mapicon="1">
+                    <img src="./assets/maps/activism icon.png"></img>
+                    <p>Activism</p>
+                </div>
+                <div class="icon-button" data-mapicon="2">
+                    <img src="./assets/maps/art icon.png"></img>
+                    <p>Art / Messages</p>
+                </div>
+                <div class="icon-button" data-mapicon="3">
+                    <img src="./assets/maps/hate icon.png"></img>
+                    <p>Hate</p>
+                </div>
+                <div class="icon-button" data-mapicon="4">
+                    <img src="./assets/maps/marketing icon.png"></img>
+                    <p>Marketing</p>
+                </div>
+                <div class="icon-button" data-mapicon="5">
+                    <img src="./assets/maps/sport icon.png"></img>
+                    <p>Sport</p>
+                </div>
+                <div class="icon-button" data-mapicon="6">
+                    <img src="./assets/maps/street art icon.png"></img>
+                    <p>Street Art</p>
+                </div>
+            </div>
+    
+            <div id="map-container" class="map-container">
+                <img src="./assets/maps/Portsmouth-map-PLAIN.png" class="default-map" id="map-default"></img>
+                <img src="./assets/maps/ACTIVISM-HEAT-PNG.png" class="heat-map" id="map-activism"></img>
+                <img src="./assets/maps/ART-HEAT-PNG.png" class="heat-map" id="map-art"></img>
+                <img src="./assets/maps/HATE-HEAT-PNG.png" class="heat-map" id="map-hate"></img>
+                <img src="./assets/maps/MARKETING-HEAT-PNG.png" class="heat-map" id="map-marketing"></img>
+                <img src="./assets/maps/SPORT-HEAT-PNG.png" class="heat-map" id="map-sport"></img>
+                <img src="./assets/maps/STREET-ART-HEAT-PNG.png" class="heat-map" id="map-street"></img>
+            </div>
 
-        <div id="map-container" class="map-container">
             <div class="image-container">
+                <p class="header-text">Click pins to see photos</p>
                 <img src="" id="sticker-image"></img>
             </div>
-            <img src="./assets/maps/Portsmouth-map-PLAIN.png" class="default-map" id="map-default"></img>
-            <img src="./assets/maps/ACTIVISM-HEAT-PNG.png" class="heat-map" id="map-activism"></img>
-            <img src="./assets/maps/ART-HEAT-PNG.png" class="heat-map" id="map-art"></img>
-            <img src="./assets/maps/HATE-HEAT-PNG.png" class="heat-map" id="map-hate"></img>
-            <img src="./assets/maps/MARKETING-HEAT-PNG.png" class="heat-map" id="map-marketing"></img>
-            <img src="./assets/maps/SPORT-HEAT-PNG.png" class="heat-map" id="map-sport"></img>
-            <img src="./assets/maps/STREET-ART-HEAT-PNG.png" class="heat-map" id="map-street"></img>
         </div>
+
     </main>
     <script src="script.js"></script>
 </body>

@@ -1,24 +1,24 @@
 const pinList = {
   1: [262, 387],
-  2: [295, 370],
-  3: [291, 369],
-  4: [248, 366],
+  2: [295, 375],
+  3: [287, 369],
+  4: [244, 366],
   5: [523, 369],
   6: [794, 560],
   7: [209, 396],
   8: [220, 433],
   9: [211, 429],
   10: [269, 454],
-  11: [379, 479],
+  11: [373, 479],
   12: [382, 480],
   13: [404, 511],
   14: [429, 527],
-  15: [473, 529],
-  
-  17: [482, 529],
-  
-  19: [489, 532],
-  20: [501, 532],
+  15: [585, 522],
+  16: [468, 529],
+  17: [480, 529],
+  18: [574, 419],
+  19: [489, 538],
+  20: [501, 542],
   21: [505, 532],
   22: [552, 540],
   23: [577, 534],
@@ -27,28 +27,28 @@ const pinList = {
   26: [751, 498],
   27: [715, 437],
   28: [543, 534],
-  29: [517, 529],
-  30: [510, 528],
+  29: [569, 452],
+  30: [515, 528],
   31: [428, 521],
   32: [285, 450],
   33: [241, 428],
   34: [239, 393],
   35: [235, 384],
-  36: [241, 371],
-  37: [261, 359],
+  36: [238, 375],
+  37: [261, 353],
   38: [242, 338],
   39: [262, 328],
   40: [277, 332],
-  41: [288, 330],
+  41: [288, 335],
   42: [289, 326],
-  43: [300, 362],
+  43: [305, 362],
   44: [295, 365],
-  45: [275, 367],
+  45: [278, 367],
   46: [269, 366],
   47: [259, 363],
-  48: [256, 365],
-  49: [253, 368],
-  50: [302, 369],
+  48: [253, 368],
+  49: [562, 493],
+  50: [283, 361],
   51: [289, 383],
   52: [308, 440],
   53: [265, 486],
@@ -59,8 +59,7 @@ const pinList = {
   58: [267, 633],
   59: [268, 639],
   60: [293, 646],
-  61: [307, 665],
-  62: [307, 668],
+  62: [310, 672],
   63: [300, 668],
   64: [307, 662],
   65: [327, 669],
@@ -160,50 +159,58 @@ const pinList = {
   159: [713, 468],
   160: [589, 441],
   161: [548, 391],
-  162: [542, 380]
+  162: [542, 380],
 }
 
 function showOrHideHeatMap(mapId) {
-  const selectedMap = document.getElementById(mapId);
-  if (selectedMap) {
-    if (selectedMap.classList.contains('active')) {
-      // if the map is shown, hide it
-      selectedMap.classList.remove('active');
-    } else {
-      // otherwise, show it
-      selectedMap.classList.add('active');
-    }
+  // grab the right heatmap using the id
+  const selectedMap = document.getElementById(mapId); 
+  if (selectedMap.classList.contains('active')) {
+    // if the map is shown, hide it
+    selectedMap.classList.remove('active');
+  } else {
+    // otherwise, show it
+    selectedMap.classList.add('active');
   }
 }
 
 function onPinClick(pinId) {
   console.log(pinId.dataset.pin)
-}
-
-function handleShowImage(imageId) {
 
 }
 
+// create the pins and places them on the page
 async function setupPins() {
+  // loops through each entry in the coordinate list
   for (const pin in pinList) {
+    // creates an element
     const pinElement = document.createElement('div');
+    // makes the element look like a pin
     pinElement.classList.add('pin');
-    pinElement.style.left = `${pinList[pin][0]-20}px`;
-    pinElement.style.top = `${pinList[pin][1]-15}px`;
+    // sets the position of the pin
+    pinElement.style.left = `${pinList[pin][0] - 20}px`;
+    pinElement.style.top = `${pinList[pin][1] - 15}px`;
+    // sets the pin id, used for attaching images
     pinElement.dataset.pin = pin;
+    // adds the pin to the map
     document.getElementById('map-container').appendChild(pinElement);
   }
 }
 
+// makes it so the icons and pins can be clicked and stuff happens when you do
 function setupClickEvents() {
+  // gets a list of all the icons and one of the pins
   const heatmapIcons = document.querySelectorAll('.icon-button')
   const heatmapPins = document.querySelectorAll('.pin')
 
+  // loop through list of icons and add an event listener to each
   heatmapIcons.forEach(icon => {
     icon.addEventListener('click', () => {
+      // grab the id of the icon
       const mapIcon = icon.dataset.mapicon;
       let mapId;
 
+      // switch statement to determine which map to show
       switch (mapIcon) {
         case '1':
           mapId = 'map-activism';
@@ -223,18 +230,20 @@ function setupClickEvents() {
         case '6':
           mapId = 'map-street';
           break;
+        // handle case where an invalid icon id is passed, for whatever reason
         default:
           mapId = null;
       }
 
+      // if a map id was found, show or hide it
       if (mapId) {
         showOrHideHeatMap(mapId);
       }
     });
   });
 
+  // loop through list of pins and add an event listener to each
   for (const pin of heatmapPins) {
-    console.log(pin.dataset.pin)
     pin.addEventListener('click', () => {
       onPinClick(pin)
     })
