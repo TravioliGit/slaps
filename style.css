@@ -1,6 +1,6 @@
 body {
     background-color: #a2bee4;
-    overflow: hidden;
+    overflow-y: hidden;
     padding-left: 32px;
 }
 
