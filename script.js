@@ -3,7 +3,7 @@ const pinList = {
   2: [295, 375],
   3: [287, 369],
   4: [244, 366],
-  5: [523, 369],
+  5: [523, 379],
   6: [794, 560],
   7: [209, 396],
   8: [220, 433],
@@ -84,7 +84,7 @@ const pinList = {
   84: [466, 471],
   85: [466, 457],
   86: [471, 348],
-  87: [474, 348],
+  87: [484, 348],
   88: [468, 342],
   89: [468, 332],
   90: [467, 304],
@@ -149,7 +149,7 @@ const pinList = {
   149: [296, 524],
   150: [502, 430],
   151: [505, 419],
-  152: [505, 416],
+  152: [505, 406],
   153: [524, 367],
   154: [580, 348],
   155: [578, 361],
@@ -162,20 +162,24 @@ const pinList = {
   162: [542, 380],
 }
 
-function showOrHideHeatMap(mapId) {
+function showOrHideHeatMap(mapId, buttonId) {
   // grab the right heatmap using the id
   const selectedMap = document.getElementById(mapId); 
+  const selectedButton = document.getElementById(buttonId);
   if (selectedMap.classList.contains('active')) {
     // if the map is shown, hide it
     selectedMap.classList.remove('active');
+    selectedButton.classList.remove('active');
   } else {
     // otherwise, show it
     selectedMap.classList.add('active');
+    selectedButton.classList.add('active');
   }
 }
 
 function onPinClick(pin) {
   const id = pin.dataset.pin
+  console.log(`Pin ${id} clicked`)
   const image = document.getElementById('sticker-image')
   const newSrc = `./assets/images/1 (${id}).jpg`
   // Add fade-out class to start the fade-out transition
@@ -226,36 +230,44 @@ function setupClickEvents() {
     icon.addEventListener('click', () => {
       // grab the id of the icon
       const mapIcon = icon.dataset.mapicon;
+      let buttonId;
       let mapId;
 
       // switch statement to determine which map to show
       switch (mapIcon) {
         case '1':
+          buttonId = 'button-activism';
           mapId = 'map-activism';
           break;
         case '2':
+          buttonId = 'button-art';
           mapId = 'map-art';
           break;
         case '3':
+          buttonId = 'button-hate';
           mapId = 'map-hate';
           break;
         case '4':
+          buttonId = 'button-marketing';
           mapId = 'map-marketing';
           break;
         case '5':
+          buttonId = 'button-sport';
           mapId = 'map-sport';
           break;
         case '6':
+          buttonId = 'button-street';
           mapId = 'map-street';
           break;
         // handle case where an invalid icon id is passed, for whatever reason
         default:
+          buttonId = null;
           mapId = null;
       }
 
       // if a map id was found, show or hide it
-      if (mapId) {
-        showOrHideHeatMap(mapId);
+      if (mapId && buttonId) {
+        showOrHideHeatMap(mapId, buttonId);
       }
     });
   });

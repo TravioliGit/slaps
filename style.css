@@ -2,12 +2,6 @@ body {
     background-color: #a2bee4;
 }
 
-.header-text {
-    font-size: 14px;
-    font-weight: bold;
-    color: #000;
-}
-
 .logo {
     display: flex;
     align-items: center;
@@ -29,11 +23,21 @@ body {
     padding: 16px;
 }
 
-#iconlist {
+.icon-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 720px;
+    padding: 4px;
+}
+
+.icon-top-container {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 10%;
+    width: 100%;
     background-color: white;
     border-radius: 16px;
     align-items: center;
@@ -42,19 +46,59 @@ body {
     padding: 4px;
 }
 
-.icon-button {
+.icon-bottom-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    border-radius: 16px;
+    align-items: center;
+    justify-content: space-evenly;
+    align-self: center;
+    padding: 4px;
+    margin-top: 4px;
+}
+
+.header-text {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.body-text {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.column-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100px;
+    width: 100%;
+    padding: 4px;
+}
+
+.icon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
     height: 80px;
     background-color: white;
-    border-radius: 16px;
-    margin: 4px;
-    padding: 4px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.5s ease;
+    margin-bottom: 2px;
 }
 
 .icon-button img {
@@ -63,9 +107,14 @@ body {
 }
 
 .icon-button p {
-    font-size: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-size: 0.75em;
     font-weight: bold;
-    color: #000;
+}
+
+.icon-button.active {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .map-container {
@@ -103,6 +152,7 @@ body {
     border-radius: 50% 50% 50% 0;
     transform: rotate(-45deg);
     opacity: 0.6;
+    cursor: pointer;
 }
 
 .pin::after {
@@ -112,8 +162,8 @@ body {
     height: 6px;
     background-color: gray; 
     border-radius: 50%;
-    top: 2.75px;
-    left: 2.7px;
+    top: 3px;
+    left: 3px;
     opacity: 0.6;
 }
 
@@ -132,15 +182,18 @@ body {
 }
 
 .image-container p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
     max-height: 20px;
     position: absolute;
     top: 0;
-
+    font-weight: bold;
 }
 
 #sticker-image {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 90%;
+    overflow: hidden;
     transition: opacity 0.5s ease-in-out;
     opacity: 1;
 }
