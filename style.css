@@ -169,7 +169,14 @@ body {
     opacity: 0.6;
 }
 
+.image-container-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .image-container {
+    margin-top: 32px;
     position: relative;
     display: flex;
     flex-direction: column;
