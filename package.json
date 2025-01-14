@@ -1,0 +1,26 @@
+{
+  "name": "slaps",
+  "version": "1.0.0",
+  "description": "website to host slaps project for riley norman",
+  "main": "script.js",
+  "scripts": {
+    "test": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TravioliGit/slaps.git"
+  },
+  "author": "jack travis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TravioliGit/slaps/issues"
+  },
+  "homepage": "https://github.com/TravioliGit/slaps#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "log4js": "^6.9.1",
+    "nodemon": "^3.1.9",
+    "ws": "^8.18.0"
+  },
+  "type": "module"
+}
