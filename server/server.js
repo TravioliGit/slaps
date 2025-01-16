@@ -6,7 +6,7 @@ import pkg from 'log4js';
 
 // Sets up configs for app api's
 const app = express();
-app.use(express.static('pages'));
+app.use(express.static('client'));
 const server = http.createServer(app);
 
 

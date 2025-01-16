@@ -1,1 +1,85 @@
-<div>ello</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLAPS Sticker Heat Map</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <div class="logo">
+        <img  src="./assets/images/Slaps-logo-no-bg.png"></img>
+    </div>
+
+    <main>
+        <div id="page-body">
+            <div class="icon-main">
+                <div class="icon-top-container">
+                    <p class="header-text">Click icons to toggle heatmaps</p>
+                    <div class="row-container">
+                        <div class="column-container">
+                            <div id="button-activism" class="icon-button" data-mapicon="1">
+                                <img src="./assets/maps/activism icon.png"></img>
+                                <p style="color:#ed2190;">Activism</p>
+                            </div>
+                            <div id="button-art" class="icon-button" data-mapicon="2">
+                                <img src="./assets/maps/art icon.png"></img>
+                                <p style="color:#0ca54a">Artistic/Message</p>
+                            </div>
+                            <div id="button-hate" class="icon-button" data-mapicon="3">
+                                <img src="./assets/maps/hate icon.png"></img>
+                                <p style="color:#000000">Hate</p>
+                            </div>
+                        </div>
+                        <div class="column-container">
+                            <div id="button-marketing" class="icon-button" data-mapicon="4">
+                                <img src="./assets/maps/marketing icon.png"></img>
+                                <p style="color:#ef3b26">Marketing</p>
+                            </div>
+                            <div id="button-sport" class="icon-button" data-mapicon="5">
+                                <img src="./assets/maps/sport icon.png"></img>
+                                <p style="color:#653614">Sport</p>
+                            </div>
+                            <div id="button-street" class="icon-button" data-mapicon="6">
+                                <img src="./assets/maps/street art icon.png"></img>
+                                <p style="color:#7e2989">Street Art/Group</p>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <div class="icon-bottom-container">
+                    <p class="header-text">Data gathered during 2023 taken from 1000 photos across Portsmouth</p>
+                    <p class="body-text">Marketing - 1000+ Stickers Spotted</p>
+                    <p class="body-text">Street Art/Group - 1000+ Stickers Spotted</p>
+                    <p class="body-text">Message/Artistic - 700+ Stickers Spotted</p>
+                    <p class="body-text">Activism - 150+ Stickers Spotted</p>
+                    <p class="body-text">Sports - 50+ Sticlers Spotted</p>
+                    <p class="body-text">Hate - 28 Stickers Spotted</p>
+                </div>
+            </div>
+    
+            <div id="map-container" class="map-container">
+                <img src="./assets/maps/Portsmouth-map-PLAIN.png" class="default-map" id="map-default"></img>
+                <img src="./assets/maps/ACTIVISM-HEAT-PNG.png" class="heat-map" id="map-activism"></img>
+                <img src="./assets/maps/ART-HEAT-PNG.png" class="heat-map" id="map-art"></img>
+                <img src="./assets/maps/HATE-HEAT-PNG.png" class="heat-map" id="map-hate"></img>
+                <img src="./assets/maps/MARKETING-HEAT-PNG.png" class="heat-map" id="map-marketing"></img>
+                <img src="./assets/maps/SPORT-HEAT-PNG.png" class="heat-map" id="map-sport"></img>
+                <img src="./assets/maps/STREET-ART-HEAT-PNG.png" class="heat-map" id="map-street"></img>
+            </div>
+            <div class="image-container-container">
+                <div class="image-container">
+                    <p class="header-text">Click pins to see photos</p>
+                    <img src="" id="sticker-image"></img>
+                </div>
+                <p class="body-text">Developed by Jack Travis</p>
+            </div>
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
